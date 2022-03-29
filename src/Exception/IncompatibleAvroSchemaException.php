@@ -6,5 +6,5 @@ namespace FlixTech\SchemaRegistryApi\Exception;
 
 class IncompatibleAvroSchemaException extends AbstractSchemaRegistryException
 {
-    public const ERROR_CODE = 409;
+    const ERROR_CODE = 409;
 }

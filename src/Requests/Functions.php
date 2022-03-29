@@ -43,7 +43,7 @@ function singleSubjectVersionRequest(string $subjectName, string $versionId): Re
         sprintf(
             'subjects/%s/versions/%s',
             $subjectName,
-            $versionId,
+            $versionId
         ),
         ACCEPT_HEADER
     );
@@ -66,7 +66,7 @@ function checkSchemaCompatibilityAgainstVersionRequest(string $schema, string $s
         sprintf(
             'compatibility/subjects/%s/versions/%s',
             $subjectName,
-            $versionId,
+            $versionId
         ),
         CONTENT_TYPE_HEADER + ACCEPT_HEADER,
         prepareJsonSchemaForTransfer(validateSchemaStringAsJson($schema))

@@ -6,5 +6,5 @@ namespace FlixTech\SchemaRegistryApi\Exception;
 
 class VersionNotFoundException extends AbstractSchemaRegistryException
 {
-    public const ERROR_CODE = 40402;
+    const ERROR_CODE = 40402;
 }

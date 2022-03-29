@@ -6,5 +6,5 @@ namespace FlixTech\SchemaRegistryApi\Exception;
 
 class BackendDataStoreException extends AbstractSchemaRegistryException
 {
-    public const ERROR_CODE = 50001;
+    const ERROR_CODE = 50001;
 }

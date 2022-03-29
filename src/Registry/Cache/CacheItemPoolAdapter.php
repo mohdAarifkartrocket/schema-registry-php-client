@@ -61,7 +61,7 @@ class CacheItemPoolAdapter implements CacheAdapter
      *
      * @throws AvroSchemaParseException|InvalidArgumentException
      */
-    public function getWithId(int $schemaId): ?AvroSchema
+    public function getWithId(int $schemaId)
     {
         $item = $this->cacheItemPool->getItem((string) $schemaId);
 
@@ -77,7 +77,7 @@ class CacheItemPoolAdapter implements CacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function getIdWithHash(string $hash): ?int
+    public function getIdWithHash(string $hash)
     {
         $item = $this->cacheItemPool->getItem($hash);
 
@@ -93,7 +93,7 @@ class CacheItemPoolAdapter implements CacheAdapter
      *
      * @throws AvroSchemaParseException|InvalidArgumentException
      */
-    public function getWithSubjectAndVersion(string $subject, int $version): ?AvroSchema
+    public function getWithSubjectAndVersion(string $subject, int $version)
     {
         $item = $this->cacheItemPool->getItem(
             $this->makeKeyFromSubjectAndVersion($subject, $version)

@@ -53,7 +53,7 @@ class DoctrineCacheAdapter implements CacheAdapter
      *
      * @throws AvroSchemaParseException
      */
-    public function getWithId(int $schemaId): ?AvroSchema
+    public function getWithId(int $schemaId)
     {
         $rawSchema = $this->doctrineCache->fetch((string) $schemaId);
 
@@ -67,7 +67,7 @@ class DoctrineCacheAdapter implements CacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function getIdWithHash(string $hash): ?int
+    public function getIdWithHash(string $hash)
     {
         $schemaId = $this->doctrineCache->fetch($hash);
 
@@ -83,7 +83,7 @@ class DoctrineCacheAdapter implements CacheAdapter
      *
      * @throws AvroSchemaParseException
      */
-    public function getWithSubjectAndVersion(string $subject, int $version): ?AvroSchema
+    public function getWithSubjectAndVersion(string $subject, int $version)
     {
         $rawSchema = $this->doctrineCache->fetch(
             $this->makeKeyFromSubjectAndVersion($subject, $version)

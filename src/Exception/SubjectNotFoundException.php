@@ -6,5 +6,5 @@ namespace FlixTech\SchemaRegistryApi\Exception;
 
 class SubjectNotFoundException extends AbstractSchemaRegistryException
 {
-    public const ERROR_CODE = 40401;
+    const ERROR_CODE = 40401;
 }
