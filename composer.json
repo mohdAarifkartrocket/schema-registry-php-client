@@ -1,6 +1,7 @@
 {
   "name": "flix-tech/confluent-schema-registry-api",
   "description": "A PHP 7.4+ library to consume the Confluent Schema Registry REST API.",
+  "minimum-stability": "dev",
   "type": "library",
   "license": "MIT",
   "authors": [
