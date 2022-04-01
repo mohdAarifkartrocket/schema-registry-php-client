@@ -27,12 +27,12 @@ class DoctrineCacheAdapter implements CacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function cacheSchemaWithId(AvroSchema $schema, int $schemaId): void
+    public function cacheSchemaWithId(AvroSchema $schema, int $schemaId)
     {
         $this->doctrineCache->save((string) $schemaId, (string) $schema);
     }
 
-    public function cacheSchemaIdByHash(int $schemaId, string $schemaHash): void
+    public function cacheSchemaIdByHash(int $schemaId, string $schemaHash)
     {
         $this->doctrineCache->save($schemaHash, $schemaId);
     }
@@ -40,7 +40,7 @@ class DoctrineCacheAdapter implements CacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function cacheSchemaWithSubjectAndVersion(AvroSchema $schema, string $subject, int $version): void
+    public function cacheSchemaWithSubjectAndVersion(AvroSchema $schema, string $subject, int $version)
     {
         $this->doctrineCache->save(
             $this->makeKeyFromSubjectAndVersion($subject, $version),

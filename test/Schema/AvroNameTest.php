@@ -15,7 +15,7 @@ class AvroNameTest extends TestCase
      * @dataProvider avroReferences
      * @test
      */
-    public function it_should_only_be_constructable_from_a_valid_Avro_reference(string $fullName, bool $isValid): void {
+    public function it_should_only_be_constructable_from_a_valid_Avro_reference(string $fullName, bool $isValid) {
         if (!$isValid) {
             $this->expectException(InvalidArgumentException::class);
         }

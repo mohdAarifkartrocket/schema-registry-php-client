@@ -21,7 +21,7 @@ class AvroReferenceTest extends TestCase
      * @param bool       $isValid
      * @param string     $expectedJson
      */
-    public function it_should_be_constructable(string $avroName, string $subject, $version, bool $isValid, ?string $expectedJson): void {
+    public function it_should_be_constructable(string $avroName, string $subject, $version, bool $isValid, $expectedJson) {
         if (!$isValid) {
             $this->expectException(InvalidArgumentException::class);
         }

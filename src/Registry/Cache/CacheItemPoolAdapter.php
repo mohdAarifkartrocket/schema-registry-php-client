@@ -25,7 +25,7 @@ class CacheItemPoolAdapter implements CacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function cacheSchemaWithId(AvroSchema $schema, int $schemaId): void
+    public function cacheSchemaWithId(AvroSchema $schema, int $schemaId)
     {
         $item = $this->cacheItemPool->getItem((string) $schemaId);
         $item->set((string) $schema);
@@ -37,7 +37,7 @@ class CacheItemPoolAdapter implements CacheAdapter
      *
      * @throws InvalidArgumentException
      */
-    public function cacheSchemaIdByHash(int $schemaId, string $schemaHash): void
+    public function cacheSchemaIdByHash(int $schemaId, string $schemaHash)
     {
         $item = $this->cacheItemPool->getItem($schemaHash);
         $item->set($schemaId);
@@ -49,7 +49,7 @@ class CacheItemPoolAdapter implements CacheAdapter
      *
      * @throws InvalidArgumentException
      */
-    public function cacheSchemaWithSubjectAndVersion(AvroSchema $schema, string $subject, int $version): void
+    public function cacheSchemaWithSubjectAndVersion(AvroSchema $schema, string $subject, int $version)
     {
         $item = $this->cacheItemPool->getItem($this->makeKeyFromSubjectAndVersion($subject, $version));
         $item->set((string) $schema);

@@ -29,7 +29,7 @@ class ExceptionMapTest extends TestCase
     /**
      * @test
      */
-    public function it_should_handle_InvalidAvroSchema_code(): void
+    public function it_should_handle_InvalidAvroSchema_code()
     {
         $this->assertSchemaRegistryException(
             InvalidAvroSchemaException::class,
@@ -52,7 +52,7 @@ class ExceptionMapTest extends TestCase
     /**
      * @test
      */
-    public function it_should_handle_IncompatibleAvroSchema_code(): void
+    public function it_should_handle_IncompatibleAvroSchema_code()
     {
         $this->assertSchemaRegistryException(
             IncompatibleAvroSchemaException::class,

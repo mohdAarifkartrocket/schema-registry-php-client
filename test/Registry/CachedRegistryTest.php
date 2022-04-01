@@ -51,7 +51,7 @@ class CachedRegistryTest extends TestCase
     /**
      * @throws AvroSchemaParseException
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->schema = AvroSchema::parse('{"type": "string"}');
         $this->registryMock = $this->getMockForAbstractClass(Registry::class);
@@ -69,7 +69,7 @@ class CachedRegistryTest extends TestCase
      * @throws SchemaRegistryException
      * @throws SchemaRegistryException
      */
-    public function it_should_cache_from_register_responses(): void
+    public function it_should_cache_from_register_responses()
     {
         $promise = new FulfilledPromise(4);
 
@@ -104,7 +104,7 @@ class CachedRegistryTest extends TestCase
      * @throws SchemaRegistryException
      * @throws SchemaRegistryException
      */
-    public function it_should_cache_from_schema_version_responses(): void
+    public function it_should_cache_from_schema_version_responses()
     {
         $promise = new FulfilledPromise(3);
 
@@ -134,7 +134,7 @@ class CachedRegistryTest extends TestCase
      * @throws SchemaRegistryException
      * @throws SchemaRegistryException
      */
-    public function it_should_cache_from_schema_id_responses(): void
+    public function it_should_cache_from_schema_id_responses()
     {
         $promise = new FulfilledPromise(1);
 
@@ -168,7 +168,7 @@ class CachedRegistryTest extends TestCase
      * @test
      * @throws SchemaRegistryException
      */
-    public function it_should_return_schema_id_from_the_cache_for_schema_hash(): void
+    public function it_should_return_schema_id_from_the_cache_for_schema_hash()
     {
         $this->registryMock
             ->expects(self::never())
@@ -194,7 +194,7 @@ class CachedRegistryTest extends TestCase
      * @throws SchemaRegistryException
      * @throws SchemaRegistryException
      */
-    public function it_should_cache_schema_id_for_hash_if_cache_is_stale(): void
+    public function it_should_cache_schema_id_for_hash_if_cache_is_stale()
     {
         $promise = new FulfilledPromise(3);
 
@@ -228,7 +228,7 @@ class CachedRegistryTest extends TestCase
      * @test
      * @throws SchemaRegistryException
      */
-    public function it_should_accept_different_hash_algo_functions(): void
+    public function it_should_accept_different_hash_algo_functions()
     {
         $sha1HashFunction = static function (AvroSchema $schema) {
             return sha1((string) $schema);
@@ -259,7 +259,7 @@ class CachedRegistryTest extends TestCase
      * @test
      * @throws SchemaRegistryException
      */
-    public function it_should_return_schema_from_the_cache_for_schema_by_id(): void
+    public function it_should_return_schema_from_the_cache_for_schema_by_id()
     {
         $this->registryMock
             ->expects(self::never())
@@ -285,7 +285,7 @@ class CachedRegistryTest extends TestCase
      * @throws SchemaRegistryException
      * @throws SchemaRegistryException
      */
-    public function it_should_cache_schema_for_id_responses_if_cache_is_stale(): void
+    public function it_should_cache_schema_for_id_responses_if_cache_is_stale()
     {
         $promise = new FulfilledPromise($this->schema);
 
@@ -319,7 +319,7 @@ class CachedRegistryTest extends TestCase
      * @test
      * @throws SchemaRegistryException
      */
-    public function it_should_return_schema_from_the_cache_for_schema_by_subject_and_version(): void
+    public function it_should_return_schema_from_the_cache_for_schema_by_subject_and_version()
     {
         $this->registryMock
             ->expects(self::never())
@@ -345,7 +345,7 @@ class CachedRegistryTest extends TestCase
      * @throws SchemaRegistryException
      * @throws SchemaRegistryException
      */
-    public function it_should_cache_schema_for_subject_and_version_responses_if_cache_is_stale(): void
+    public function it_should_cache_schema_for_subject_and_version_responses_if_cache_is_stale()
     {
         $promise = new FulfilledPromise($this->schema);
 
@@ -380,7 +380,7 @@ class CachedRegistryTest extends TestCase
      * @throws SchemaRegistryException
      * @throws SchemaRegistryException
      */
-    public function it_should_not_cache_latest_version_calls(): void
+    public function it_should_not_cache_latest_version_calls()
     {
         $promise = new FulfilledPromise($this->schema);
 
@@ -411,7 +411,7 @@ class CachedRegistryTest extends TestCase
      * @test
      * @throws SchemaRegistryException
      */
-    public function it_should_handle_exceptions_wrapped_in_promises_correctly(): void
+    public function it_should_handle_exceptions_wrapped_in_promises_correctly()
     {
         $subjectNotFoundException = new SubjectNotFoundException();
 

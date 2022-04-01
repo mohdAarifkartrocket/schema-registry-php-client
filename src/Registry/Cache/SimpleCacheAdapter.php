@@ -27,7 +27,7 @@ class SimpleCacheAdapter implements CacheAdapter
      *
      * @throws InvalidArgumentException
      */
-    public function cacheSchemaWithId(AvroSchema $schema, int $schemaId): void
+    public function cacheSchemaWithId(AvroSchema $schema, int $schemaId)
     {
         $this->cache->set((string) $schemaId, (string) $schema);
     }
@@ -37,7 +37,7 @@ class SimpleCacheAdapter implements CacheAdapter
      *
      * @throws InvalidArgumentException
      */
-    public function cacheSchemaIdByHash(int $schemaId, string $schemaHash): void
+    public function cacheSchemaIdByHash(int $schemaId, string $schemaHash)
     {
         $this->cache->set($schemaHash, $schemaId);
     }
@@ -47,7 +47,7 @@ class SimpleCacheAdapter implements CacheAdapter
      *
      * @throws InvalidArgumentException
      */
-    public function cacheSchemaWithSubjectAndVersion(AvroSchema $schema, string $subject, int $version): void
+    public function cacheSchemaWithSubjectAndVersion(AvroSchema $schema, string $subject, int $version)
     {
         $this->cache->set(
             $this->makeKeyFromSubjectAndVersion($subject, $version),
@@ -60,7 +60,7 @@ class SimpleCacheAdapter implements CacheAdapter
      *
      * @throws AvroSchemaParseException|InvalidArgumentException
      */
-    public function getWithId(int $schemaId): ?AvroSchema
+    public function getWithId(int $schemaId)
     {
         $rawSchema = $this->cache->get((string) $schemaId);
 
@@ -74,7 +74,7 @@ class SimpleCacheAdapter implements CacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function getIdWithHash(string $hash): ?int
+    public function getIdWithHash(string $hash)
     {
         $rawId = $this->cache->get($hash);
         
@@ -90,7 +90,7 @@ class SimpleCacheAdapter implements CacheAdapter
      *
      * @throws AvroSchemaParseException|InvalidArgumentException
      */
-    public function getWithSubjectAndVersion(string $subject, int $version): ?AvroSchema
+    public function getWithSubjectAndVersion(string $subject, int $version)
     {
         $rawSchema = $this->cache->get(
             $this->makeKeyFromSubjectAndVersion($subject, $version)
